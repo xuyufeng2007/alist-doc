@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优惠券购买平台</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            text-align: center;
+            color: #06c167;
+            margin-bottom: 30px;
+        }
+
+        .package {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .price {
+            font-size: 24px;
+            color: #ff6000;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn-buy {
+            background: #06c167;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .notice {
+            font-size: 12px;
+            color: #666;
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>神奈克省钱卡</h2>
+        <p>限时特惠 通用优惠券</p>
+    </div>
+
+    <div class="package">
+        <div class="price">¥30</div>
+        <h3>商家通用券包</h3>
+        <ul>
+            <li>3张满5.01减5元券</li>
+            <li>3张满25减5元券</li>
+        </ul>
+        <button class="btn-buy" onclick="showPayment()">立即购买</button>
+    </div>
+
+    <div class="package">
+        <div class="price">¥50</div>
+        <h3>商家通用券包</h3>
+        <ul>
+            <li>6张满5.01减5元券</li>
+            <li>6张满25减5元券</li>
+        </ul>
+        <button class="btn-buy" onclick="showPayment()">立即购买</button>
+    </div>
+
+    <div class="package">
+        <div class="price">¥120</div>
+        <h3>商家通用券包</h3>
+        <ul>
+            <li>12张满5.01减5元券</li>
+            <li>12张满25减5元券</li>
+        </ul>
+        <button class="btn-buy" onclick="showPayment()">立即购买</button>
+    </div>
+
+    <div class="notice">
+        <p>注意事项：</p>
+        <p>• 单日限购5次 • 购买后无法退款</p>
+        <p>客服电话：4006115915 / 0731-89556056</p>
+    </div>
+
+    <script>
+        function showPayment() {
+            const account = "19179570327";
+            const message = `请打开支付宝APP，向以下账号转账：\n\n${account}\n\n转账完成后请联系客服确认订单`;
+            
+            if(confirm(message + "\n\n点击确定复制账号")) {
+                navigator.clipboard.writeText(account);
+                alert("账号已复制到剪贴板");
+            }
+        }
+    </script>
+</body>
+</html>
